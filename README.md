@@ -1,8 +1,10 @@
-![image](https://github.com/user-attachments/assets/5529d288-5b92-4fc4-82b1-09db15977a98)
 # 🏦 5C Credit Analysis Dashboard
-![Credit Analysis Dashboard](https://via.placeholder.com/800x200/1f77b4/ffffff?text=5C+Credit+Analysis+Dashboard)
+![Credit Analysis Dashboard](5C Credit Dashboard.png)
 
 This application implements a comprehensive credit risk assessment system using the traditional "5 C's of Credit" methodology combined with modern data science techniques. The system provides financial institutions with advanced analytics and scenario-based risk evaluation for both individual consumers and small-to-medium enterprises (SMEs).
+The data used in this project is sourced from Kaggle, specifically from the dataset titled "Credit and SMEs Synth Data - Credit Analysis". The dataset is publicly available for use and can be accessed via the following link:
+[Credit and SMEs Synth Data - Credit Analysis on Kaggle](https://www.kaggle.com/datasets/youssefismail20/credit-and-smes-synth-data-credit-analysis)
+This dataset contains synthetic data intended for credit analysis, which is particularly useful for studying Small and Medium-sized Enterprises (SMEs) and their credit behavior. The data includes various features that are crucial for building models to assess credit risk, providing a valuable resource for financial analysis and decision-making processes.
 
 ## Features
 
