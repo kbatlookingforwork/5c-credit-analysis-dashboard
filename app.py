@@ -30,14 +30,40 @@ def load_data():
     try:
         data_processor = DataProcessor()
         
-        # Look for the specific CSV files
-        consumer_file = "synthetic_credit_consumers_1749887755764.csv"
-        sme_file = "synthetic_smes_1749887755764.csv"
+       # Look for CSV files with flexible naming
+        csv_files = [f for f in os.listdir('.') if f.endswith('.csv')]
         
-        if not os.path.exists(consumer_file) or not os.path.exists(sme_file):
-            st.error("⚠️ Dataset files not found. Please ensure the credit consumer and SME CSV files are available.")
-            st.info("Expected files: synthetic_credit_consumers_1749887755764.csv and synthetic_smes_1749887755764.csv")
+        # Try to identify consumer and SME files
+        consumer_file = None
+        sme_file = None
+        
+        for file in csv_files:
+            if 'consumer' in file.lower() or 'credit' in file.lower():
+                consumer_file = file
+            elif 'sme' in file.lower() or 'business' in file.lower():
+                sme_file = file
+        
+        # Fallback: use any two CSV files if specific names not found
+        if not consumer_file or not sme_file:
+            if len(csv_files) >= 2:
+                consumer_file = csv_files[0]
+                sme_file = csv_files[1]
+            elif len(csv_files) == 1:
+                # Use the same file for both (will be handled by the processor)
+                consumer_file = sme_file = csv_files[0]
+
+        if not consumer_file or not sme_file:
+            st.error(
+                "⚠️ Dataset files not found. Please ensure CSV files are available in the project directory."
+            )
+            st.info(
+                "Looking for files containing 'consumer', 'credit', 'sme', or 'business' in their names, or any CSV files."
+            )
+            if csv_files:
+                st.info(f"Found CSV files: {', '.join(csv_files)}")
             return None
+
+        st.info(f"Loading data from: {consumer_file} and {sme_file}")
         
         # Load the CSV files
         df1 = pd.read_csv(consumer_file)
