@@ -81,7 +81,6 @@ def load_data():
 def main():
     # Header
     st.title("🏦 5C Credit Analysis Dashboard")
-    st.markdown("---")
     st.markdown("""
     <div style="display: flex; align-items: center; gap: 10px; margin-top: 20px;">
         <p style="font-weight: bold; color: green;">Created by:</p>
@@ -92,6 +91,8 @@ def main():
         <p><b>Dany Yudha Putra Haque</b></p>
     </div>
 """, unsafe_allow_html=True)
+    st.markdown("---")
+
     
     # Sidebar for controls
     st.sidebar.title("📋 Analysis Controls")
