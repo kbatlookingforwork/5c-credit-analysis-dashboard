@@ -326,41 +326,13 @@ def individual_analysis(data, scoring_engine, visualizer):
     """Individual borrower analysis"""
     st.header("🔍 Individual Borrower Analysis")
     
- # Create borrower selection options with names
-    borrower_options = {}
-    borrower_display_names = []
-    
-    for idx, row in data.iterrows():
-        # Determine display name based on borrower type
-        if 'borrower_type' in row and pd.notnull(row['borrower_type']):
-            if row['borrower_type'].lower() == 'sme':
-                # For SME, use Business Name
-                if 'borrower_name' in row and pd.notnull(row['borrower_name']):
-                    display_name = f"[SME] {row['borrower_name']}"
-                else:
-                    display_name = f"[SME] Business #{idx + 1}"
-            else:
-                # For Consumer, use Name
-                if 'borrower_name' in row and pd.notnull(row['borrower_name']):
-                    display_name = f"[Consumer] {row['borrower_name']}"
-                else:
-                    display_name = f"[Consumer] Customer #{idx + 1}"
-        else:
-            # Fallback if borrower_type is not available
-            if 'borrower_name' in row and pd.notnull(row['borrower_name']):
-                display_name = str(row['borrower_name'])
-            else:
-                display_name = f"Borrower #{idx + 1}"
-        
-        borrower_options[display_name] = idx
-        borrower_display_names.append(display_name)
-    
-    if borrower_display_names:
-        selected_display_name = st.selectbox("Select Borrower", borrower_display_names)
-        selected_idx = borrower_options[selected_display_name]
-        
+    # Borrower selection
+    if 'borrower_id' in data.columns:
+        borrower_ids = data['borrower_id'].unique()
+        selected_borrower = st.selectbox("Select Borrower", borrower_ids)
+
         # Get borrower data
-        borrower_data = data.iloc[selected_idx]
+        borrower_data = data[data['borrower_id'] == selected_borrower].iloc[0]
         scores = scoring_engine.calculate_individual_scores(borrower_data)
 
         # Display borrower information
@@ -368,25 +340,291 @@ def individual_analysis(data, scoring_engine, visualizer):
 
         with col1:
             st.subheader("Borrower Profile")
-            st.write(f"**Selected**: {selected_display_name}")
-            if 'borrower_id' in borrower_data and pd.notnull(borrower_data['borrower_id']):
-                st.write(f"**ID**: {borrower_data['borrower_id']}")
-            if 'borrower_name' in borrower_data and pd.notnull(borrower_data['borrower_name']):
-                if 'borrower_type' in borrower_data and borrower_data['borrower_type'].lower() == 'sme':
-                    st.write(f"**Business Name**: {borrower_data['borrower_name']}")
-                else:
-                    st.write(f"**Name**: {borrower_data['borrower_name']}")
+            st.write(f"**Borrower ID**: {selected_borrower}")
+            if 'borrower_name' in borrower_data:
+                st.write(f"**Name/Company**: {borrower_data['borrower_name']}")
             if 'borrower_type' in borrower_data:
                 st.write(f"**Type**: {borrower_data['borrower_type'].title()}")
-            if 'industry' in borrower_data and pd.notnull(borrower_data['industry']):
+            if 'industry' in borrower_data:
                 st.write(f"**Industry**: {borrower_data['industry'].title()}")
-            if 'loan_amount' in borrower_data and pd.notnull(borrower_data['loan_amount']):
+            if 'loan_amount' in borrower_data:
                 st.write(
                     f"**Requested Amount**: ${borrower_data['loan_amount']:,.0f}"
                 )
-    
+            if 'age' in borrower_data and pd.notnull(borrower_data['age']):
+                st.write(f"**Age**: {borrower_data['age']:.0f}")
+            if 'annual_revenue' in borrower_data and pd.notnull(
+                    borrower_data['annual_revenue']
+            ) and borrower_data['annual_revenue'] > 0:
+                st.write(
+                    f"**Annual Revenue**: ${borrower_data['annual_revenue']:,.0f}"
+                )
+
+        with col2:
+            st.subheader("Credit Score Summary")
+            total_score = scores['total_score']
+            if total_score >= 0.7:
+                st.success(f"**Total Score**: {total_score:.3f} - Low Risk")
+            elif total_score >= 0.5:
+                st.warning(f"**Total Score**: {total_score:.3f} - Medium Risk")
+            else:
+                st.error(f"**Total Score**: {total_score:.3f} - High Risk")
+
+        # 5C Breakdown
+        st.subheader("5C Analysis Breakdown")
+
+        col1, col2 = st.columns(2)
+
+        with col1:
+            fig = visualizer.plot_individual_5c_bar(scores)
+            st.plotly_chart(fig, use_container_width=True)
+
+        with col2:
+            fig = visualizer.plot_individual_5c_radar(scores)
+            st.plotly_chart(fig, use_container_width=True)
+
+        # Detailed Calculation Breakdown
+        st.subheader("📊 Detailed Score Calculation")
+
+        # Get current weights
+        weights = scoring_engine.weights
+
+        # Character Score Details
+        st.markdown("#### 1. Character Score Calculation")
+        with st.expander("View Character Score Details", expanded=False):
+            character_raw = scores['character_score'] / weights[
+                'character'] if weights['character'] > 0 else 0
+
+            st.markdown(f"""
+            **Raw Character Factors:**
+            - Credit Score: {borrower_data.get('credit_score', 'N/A')}
+            - Credit History Length: {borrower_data.get('credit_history_length', 'N/A')} months
+            - Management Experience: {borrower_data.get('management_experience', 'N/A')} years
+            - Previous Defaults: {borrower_data.get('previous_defaults', 'N/A')}
+            
+            **Calculation:**
+            - Raw Character Score: {character_raw:.4f}
+            - Weight Applied: {weights['character']:.2f}
+            - **Final Character Score: {scores['character_score']:.4f}**
+            """)
+
+        # Capacity Score Details
+        st.markdown("#### 2. Capacity Score Calculation")
+        with st.expander("View Capacity Score Details", expanded=False):
+            capacity_raw = scores['capacity_score'] / weights[
+                'capacity'] if weights['capacity'] > 0 else 0
+
+            st.markdown(f"""
+            **Raw Capacity Factors:**
+            - Annual Revenue: ${borrower_data.get('annual_revenue', 0):,.0f}
+            - Monthly Income: ${borrower_data.get('monthly_income', 0):,.0f}
+            - Loan Amount: ${borrower_data.get('loan_amount', 0):,.0f}
+            - Debt Service Coverage: {borrower_data.get('debt_service_coverage_ratio', 'N/A')}
+            - Current Ratio: {borrower_data.get('current_ratio', 'N/A')}
+            
+            **Calculation:**
+            - Income to Loan Ratio: {(borrower_data.get('monthly_income', 0) * 12) / max(borrower_data.get('loan_amount', 1), 1):.2f}
+            - Raw Capacity Score: {capacity_raw:.4f}
+            - Weight Applied: {weights['capacity']:.2f}
+            - **Final Capacity Score: {scores['capacity_score']:.4f}**
+            """)
+
+        # Capital Score Details
+        st.markdown("#### 3. Capital Score Calculation")
+        with st.expander("View Capital Score Details", expanded=False):
+            capital_raw = scores['capital_score'] / weights[
+                'capital'] if weights['capital'] > 0 else 0
+
+            st.markdown(f"""
+            **Raw Capital Factors:**
+            - Total Assets: ${borrower_data.get('total_assets', 0):,.0f}
+            - Total Liabilities: ${borrower_data.get('total_liabilities', 0):,.0f}
+            - Owner Equity: ${borrower_data.get('owner_equity', 0):,.0f}
+            - Debt to Equity Ratio: {borrower_data.get('debt_to_equity_ratio', 'N/A')}
+            - Retained Earnings: ${borrower_data.get('retained_earnings', 0):,.0f}
+            
+            **Calculation:**
+            - Equity Ratio: {borrower_data.get('owner_equity', 0) / max(borrower_data.get('total_assets', 1), 1):.2f}
+            - Raw Capital Score: {capital_raw:.4f}
+            - Weight Applied: {weights['capital']:.2f}
+            - **Final Capital Score: {scores['capital_score']:.4f}**
+            """)
+
+        # Collateral Score Details
+        st.markdown("#### 4. Collateral Score Calculation")
+        with st.expander("View Collateral Score Details", expanded=False):
+            collateral_raw = scores['collateral_score'] / weights[
+                'collateral'] if weights['collateral'] > 0 else 0
+
+            st.markdown(f"""
+            **Raw Collateral Factors:**
+            - Collateral Value: ${borrower_data.get('collateral_value', 0):,.0f}
+            - Loan Amount: ${borrower_data.get('loan_amount', 0):,.0f}
+            - Property Value: ${borrower_data.get('property_value', 0):,.0f}
+            - Vehicle Value: ${borrower_data.get('vehicle_value', 0):,.0f}
+            
+            **Calculation:**
+            - Loan to Value Ratio: {borrower_data.get('loan_amount', 0) / max(borrower_data.get('collateral_value', 1), 1):.2f}
+            - Raw Collateral Score: {collateral_raw:.4f}
+            - Weight Applied: {weights['collateral']:.2f}
+            - **Final Collateral Score: {scores['collateral_score']:.4f}**
+            """)
+
+        # Conditions Score Details
+        st.markdown("#### 5. Conditions Score Calculation")
+        with st.expander("View Conditions Score Details", expanded=False):
+            conditions_raw = scores['conditions_score'] / weights[
+                'conditions'] if weights['conditions'] > 0 else 0
+
+            st.markdown(f"""
+            **Raw Conditions Factors:**
+            - Industry: {borrower_data.get('industry', 'N/A')}
+            - Borrower Type: {borrower_data.get('borrower_type', 'N/A')}
+            - Economic Stability Index: {borrower_data.get('economic_stability_index', 'N/A')}
+            - Market Risk Score: {borrower_data.get('market_risk_score', 'N/A')}
+            - Business Age: {borrower_data.get('business_age', 'N/A')} years
+            
+            **Calculation:**
+            - Industry Risk Assessment: Based on sector stability
+            - Market Conditions: Current economic environment
+            - Raw Conditions Score: {conditions_raw:.4f}
+            - Weight Applied: {weights['conditions']:.2f}
+            - **Final Conditions Score: {scores['conditions_score']:.4f}**
+            """)
+
+        # Final Score Calculation
+        st.markdown("#### 🎯 Final Credit Score Calculation")
+        with st.expander("View Final Score Breakdown", expanded=True):
+            st.markdown(f"""
+            **Weighted Component Scores:**
+            - Character Score: {scores['character_score']:.4f} (Weight: {weights['character']:.2f})
+            - Capacity Score: {scores['capacity_score']:.4f} (Weight: {weights['capacity']:.2f})
+            - Capital Score: {scores['capital_score']:.4f} (Weight: {weights['capital']:.2f})
+            - Collateral Score: {scores['collateral_score']:.4f} (Weight: {weights['collateral']:.2f})
+            - Conditions Score: {scores['conditions_score']:.4f} (Weight: {weights['conditions']:.2f})
+            
+            **Final Calculation:**
+            Total Score = (Character × {weights['character']:.2f}) + (Capacity × {weights['capacity']:.2f}) + (Capital × {weights['capital']:.2f}) + (Collateral × {weights['collateral']:.2f}) + (Conditions × {weights['conditions']:.2f})
+            
+            **Total Score = {scores['total_score']:.4f}**
+            
+            **Risk Assessment:**
+            {f"✅ **APPROVE** - Low Risk (Score ≥ 0.70)" if scores['total_score'] >= 0.70 else 
+             f"⚠️ **REVIEW** - Medium Risk (0.50 ≤ Score < 0.70)" if scores['total_score'] >= 0.50 else 
+             f"❌ **REJECT** - High Risk (Score < 0.50)"}
+            """)
+
+        # Recommendations
+        st.subheader("💡 Credit Decision Recommendations")
+
+        if scores['total_score'] >= 0.70:
+            st.success("""
+            **Recommendation: APPROVE**
+            - Strong overall credit profile
+            - Low default probability
+            - Standard terms and conditions apply
+            """)
+        elif scores['total_score'] >= 0.50:
+            st.warning("""
+            **Recommendation: CONDITIONAL APPROVAL**
+            - Additional documentation required
+            - Consider higher interest rate or additional collateral
+            - Review again in 6 months
+            """)
+        else:
+            st.error("""
+            **Recommendation: REJECT**
+            - High default risk
+            - Insufficient creditworthiness
+            - Consider alternative financing options
+            """)
+
+        # Detailed analysis
+        st.subheader("Detailed 5C Assessment")
+
+        # Character analysis
+        st.markdown("#### 🤝 Character Analysis")
+        character_score = scores['character_score']
+        st.progress(character_score)
+        st.write(f"Score: {character_score:.3f}")
+
+        if character_score >= 0.7:
+            st.success(
+                "Strong character profile with good credit history and reputation."
+            )
+        elif character_score >= 0.5:
+            st.warning(
+                "Moderate character assessment. Some areas may need attention."
+            )
+        else:
+            st.error(
+                "Character concerns identified. Requires additional verification."
+            )
+
+        # Capacity analysis
+        st.markdown("#### 💪 Capacity Analysis")
+        capacity_score = scores['capacity_score']
+        st.progress(capacity_score)
+        st.write(f"Score: {capacity_score:.3f}")
+
+        if capacity_score >= 0.7:
+            st.success(
+                "Strong repayment capacity based on cash flow and financial ratios."
+            )
+        elif capacity_score >= 0.5:
+            st.warning("Adequate capacity but monitor closely for changes.")
+        else:
+            st.error(
+                "Capacity concerns. Cash flow may not support requested loan amount."
+            )
+
+        # Capital analysis
+        st.markdown("#### 💰 Capital Analysis")
+        capital_score = scores['capital_score']
+        st.progress(capital_score)
+        st.write(f"Score: {capital_score:.3f}")
+
+        if capital_score >= 0.7:
+            st.success("Strong capital position with good owner investment.")
+        elif capital_score >= 0.5:
+            st.warning("Moderate capital adequacy.")
+        else:
+            st.error(
+                "Insufficient capital cushion. Consider requiring additional equity."
+            )
+
+        # Collateral analysis
+        st.markdown("#### 🏠 Collateral Analysis")
+        collateral_score = scores['collateral_score']
+        st.progress(collateral_score)
+        st.write(f"Score: {collateral_score:.3f}")
+
+        if collateral_score >= 0.7:
+            st.success("Adequate collateral coverage for the requested loan.")
+        elif collateral_score >= 0.5:
+            st.warning("Moderate collateral position.")
+        else:
+            st.error(
+                "Insufficient collateral. Additional security may be required."
+            )
+
+        # Conditions analysis
+        st.markdown("#### 🌍 Conditions Analysis")
+        conditions_score = scores['conditions_score']
+        st.progress(conditions_score)
+        st.write(f"Score: {conditions_score:.3f}")
+
+        if conditions_score >= 0.7:
+            st.success("Favorable economic and industry conditions.")
+        elif conditions_score >= 0.5:
+            st.warning("Neutral conditions with some uncertainties.")
+        else:
+            st.error("Challenging conditions may impact repayment ability.")
+
     else:
-        st.error("No borrower data available for analysis. Please check data structure.")
+        st.error(
+            "Borrower ID column not found in dataset. Please check data structure."
+        )
 
 def five_c_deep_dive(data, scoring_engine, visualizer):
     """Deep dive into 5C analysis"""
