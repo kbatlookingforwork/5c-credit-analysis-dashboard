@@ -326,13 +326,41 @@ def individual_analysis(data, scoring_engine, visualizer):
     """Individual borrower analysis"""
     st.header("🔍 Individual Borrower Analysis")
     
-    # Borrower selection
-    if 'borrower_id' in data.columns:
-        borrower_ids = data['borrower_id'].unique()
-        selected_borrower = st.selectbox("Select Borrower", borrower_ids)
-
+      # Create borrower selection options with names
+    borrower_options = {}
+    borrower_display_names = []
+    
+    for idx, row in data.iterrows():
+        # Determine display name based on borrower type
+        if 'borrower_type' in row and pd.notnull(row['borrower_type']):
+            if row['borrower_type'].lower() == 'sme':
+                # For SME, use Business Name
+                if 'borrower_name' in row and pd.notnull(row['borrower_name']):
+                    display_name = f"[SME] {row['borrower_name']}"
+                else:
+                    display_name = f"[SME] Business #{idx + 1}"
+            else:
+                # For Consumer, use Name
+                if 'borrower_name' in row and pd.notnull(row['borrower_name']):
+                    display_name = f"[Consumer] {row['borrower_name']}"
+                else:
+                    display_name = f"[Consumer] Customer #{idx + 1}"
+        else:
+            # Fallback if borrower_type is not available
+            if 'borrower_name' in row and pd.notnull(row['borrower_name']):
+                display_name = str(row['borrower_name'])
+            else:
+                display_name = f"Borrower #{idx + 1}"
+        
+        borrower_options[display_name] = idx
+        borrower_display_names.append(display_name)
+    
+    if borrower_display_names:
+        selected_display_name = st.selectbox("Select Borrower", borrower_display_names)
+        selected_idx = borrower_options[selected_display_name]
+        
         # Get borrower data
-        borrower_data = data[data['borrower_id'] == selected_borrower].iloc[0]
+        borrower_data = data.iloc[selected_idx]
         scores = scoring_engine.calculate_individual_scores(borrower_data)
 
         # Display borrower information
@@ -340,14 +368,19 @@ def individual_analysis(data, scoring_engine, visualizer):
 
         with col1:
             st.subheader("Borrower Profile")
-            st.write(f"**Borrower ID**: {selected_borrower}")
-            if 'borrower_name' in borrower_data:
-                st.write(f"**Name/Company**: {borrower_data['borrower_name']}")
+            st.write(f"**Selected**: {selected_display_name}")
+            if 'borrower_id' in borrower_data and pd.notnull(borrower_data['borrower_id']):
+                st.write(f"**ID**: {borrower_data['borrower_id']}")
+            if 'borrower_name' in borrower_data and pd.notnull(borrower_data['borrower_name']):
+                if 'borrower_type' in borrower_data and borrower_data['borrower_type'].lower() == 'sme':
+                    st.write(f"**Business Name**: {borrower_data['borrower_name']}")
+                else:
+                    st.write(f"**Name**: {borrower_data['borrower_name']}")
             if 'borrower_type' in borrower_data:
                 st.write(f"**Type**: {borrower_data['borrower_type'].title()}")
-            if 'industry' in borrower_data:
+            if 'industry' in borrower_data and pd.notnull(borrower_data['industry']):
                 st.write(f"**Industry**: {borrower_data['industry'].title()}")
-            if 'loan_amount' in borrower_data:
+            if 'loan_amount' in borrower_data and pd.notnull(borrower_data['loan_amount']):
                 st.write(
                     f"**Requested Amount**: ${borrower_data['loan_amount']:,.0f}"
                 )
@@ -623,7 +656,7 @@ def individual_analysis(data, scoring_engine, visualizer):
 
     else:
         st.error(
-            "Borrower ID column not found in dataset. Please check data structure."
+            "No borrower data available for analysis. Please check data structure."
         )
 
 def five_c_deep_dive(data, scoring_engine, visualizer):
