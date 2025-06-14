@@ -85,9 +85,18 @@ Character_Score = (Credit_History_Score × 0.4) +
 
 **Evaluation Criteria:**
 - **Credit History**: Length and quality of credit relationships
-- **Payment Behavior**: Timeliness and consistency of payments
-- **Management Experience**: Leadership track record (for SMEs)
 
+
+- **Credit History**: `min(credit_history_years / 10, 1.0)`
+- **Payment Behavior**: Timeliness and consistency of payments
+- **Payment Behaviour**: 
+  ```
+  if payment_delays == 0: score = 1.0
+  elif payment_delays <= 2: score = 0.8
+  elif payment_delays <= 5: score = 0.6
+  else: score = max(0.2, 1.0 - (payment_delays / 10))
+  ```
+- **Management Experience**: Leadership track record (for SMEs)
 #### Capacity Assessment (Weight: 20-30%)
 ```python
 Capacity_Score = (Income_Stability_Score × 0.4) + 
@@ -97,6 +106,22 @@ Capacity_Score = (Income_Stability_Score × 0.4) +
 
 **Key Metrics:**
 - **Debt-to-Income Ratio**: Monthly debt payments / Monthly income
+  ** Debt to Income Ratio (Consumers)**: 
+  ```
+  loan_to_income = loan_amount / (transaction_amount × 12)
+  if loan_to_income <= 0.2: score = 1.0
+  elif loan_to_income <= 0.4: score = 0.8
+  elif loan_to_income <= 0.6: score = 0.6
+  else: score = max(0.2, 1.0 - (loan_to_income - 0.6) / 0.4 × 0.6)
+  ```
+  **Debt to Income Ratio (SMEs)**:
+  ```
+  loan_to_revenue = loan_amount / annual_revenue
+  if loan_to_revenue <= 0.15: score = 1.0
+  elif loan_to_revenue <= 0.25: score = 0.8
+  elif loan_to_revenue <= 0.35: score = 0.6
+  else: score = max(0.2, 1.0 - (loan_to_revenue - 0.35) / 0.35 × 0.6)
+  ```
 - **Current Ratio**: Current assets / Current liabilities
 - **Cash Flow Coverage**: Operating cash flow / Total debt service
 
@@ -112,18 +137,10 @@ Capital_Score = (Equity_Ratio × 0.5) +
 - **Debt-to-Equity Ratio**: Total debt / Owner's equity
 - **Asset Turnover**: Revenue / Total assets
 
-#### Collateral Assessment (Weight: 10-30%)
+#### Collateral Assessment (Weight: 10-30%) [THIS ONE THERE IS NOT IN DATASET]
 ```python
-Collateral_Score = (Asset_Coverage_Ratio × 0.4) + 
-                  (Loan_to_Value_Ratio × 0.3) + 
-                  (Asset_Liquidity × 0.3)
+Collateral_Score
 ```
-
-**Security Evaluation:**
-- **Loan-to-Value (LTV)**: Loan amount / Collateral value
-- **Asset Coverage**: Total assets / Total liabilities
-- **Collateral Quality**: Marketability and depreciation factors
-
 #### Conditions Assessment (Weight: 10-40%)
 ```python
 Conditions_Score = (Economic_Environment × 0.4) + 
