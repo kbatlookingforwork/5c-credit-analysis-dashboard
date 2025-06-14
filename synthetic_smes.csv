@@ -1,0 +1,201 @@
+BusinessID,BusinessName,AnnualRevenue,CreditScore,LatePayments,Industry_Healthcare,Industry_Retail,Industry_Technology
+1616c3df-e6eb-4683-843e-dd09c32fef64,Parker Inc,4229027.0,712.0,7.0,0.0,1.0,0.0
+6eebfe2a-0c55-48c7-bd84-f4f044d3b5f4,Baker LLC,1402314.0,448.0,3.0,0.0,0.0,0.0
+b752456e-fc95-47bb-8751-65080e99e792,"Mcmahon, Miller and Daniel",1329220.0,409.0,10.0,0.0,0.0,0.0
+a09d1441-7b38-423e-8dc1-dcc54c9300be,Shields-Mata,3965091.0,682.0,3.0,0.0,0.0,1.0
+9c853fac-3413-48e1-a941-a82891141a9e,"Burton, Anderson and Morris",2255516.0,550.0,10.0,0.0,0.0,0.0
+faf79fc9-0b59-4b37-b046-f945ed7b5108,Roberts Ltd,3315217.0,544.0,5.0,0.0,0.0,0.0
+f8468218-cf3d-407a-94c1-8b2eb5d0a623,Alvarado and Sons,4442427.0,833.0,3.0,0.0,1.0,0.0
+072834c1-f939-46ab-8017-42eb35193f46,Contreras-Goodman,2630184.0,441.0,7.0,0.0,1.0,0.0
+0026c7fa-14c5-49df-9c53-0d129f8ffb4c,Cruz Ltd,3467496.0,408.0,1.0,0.0,0.0,1.0
+2919de80-4863-489f-bf5a-c8e5d2bf6d4e,Cole-Whitehead,454662.0,366.0,1.0,0.0,0.0,0.0
+906bbb1c-8ce7-4144-a7f7-146abe7b4377,Parks-Estes,849160.0,649.0,9.0,0.0,0.0,1.0
+ce30e32b-9566-4151-861e-c64857a9226f,Werner-Owens,4147993.0,451.0,1.0,1.0,0.0,0.0
+07e98084-b9e9-4dfd-8efc-5cec9a4c2456,"Garcia, Mccormick and Wheeler",676822.0,728.0,9.0,1.0,0.0,0.0
+db48987f-cf7b-4b61-bde7-eef571dc590a,Flores-Stewart,3422149.0,465.0,1.0,0.0,0.0,1.0
+4005ccaf-630f-49cd-b4de-9dfe1c6dce2e,"Martinez, Smith and Clark",4628749.0,837.0,10.0,0.0,1.0,0.0
+90b0f303-a4e0-4516-be67-cb4e7f296d3c,Austin-Norris,3950636.0,402.0,5.0,1.0,0.0,0.0
+7d00f97f-73da-4cc5-a459-e59c98bf0eb3,Mitchell PLC,1323507.0,662.0,6.0,1.0,0.0,0.0
+8704c22b-61b3-498a-85c5-53ca296dae02,"Franklin, Smith and Woodard",324673.0,410.0,2.0,0.0,1.0,0.0
+5b8eb61e-d53a-40e7-9660-a024c63119ba,Willis-Rodriguez,4628446.0,662.0,4.0,0.0,0.0,1.0
+1931709f-a996-4ca6-891e-399afc135a09,"Green, Torres and Powers",962846.0,329.0,1.0,0.0,0.0,0.0
+e291ba85-fba1-4299-9692-f76f6cc61019,Moore-Berger,1138171.0,716.0,8.0,0.0,1.0,0.0
+18cdb528-0804-4d52-8d63-d965c6400f3a,Terrell Inc,2132355.0,565.0,0.0,0.0,0.0,1.0
+16c93925-5f3a-4876-918e-7a2462540978,Day and Sons,4152805.0,825.0,7.0,1.0,0.0,0.0
+8fc9d71e-fceb-4283-8b99-d85804ebd069,Watkins-Chaney,2498557.0,645.0,1.0,0.0,0.0,0.0
+a2b4fb02-0643-4075-be25-e0a8b851f86e,Wagner-Roberts,4553663.0,416.0,6.0,0.0,0.0,0.0
+4d73fb17-56d7-43eb-942e-36a4a2ab1db5,"White, Garcia and Murphy",2011586.0,561.0,6.0,1.0,0.0,0.0
+6565dc84-75d5-440e-9393-c491be6c1b46,Walters and Sons,4614937.0,440.0,3.0,1.0,0.0,0.0
+dd6c7bf1-cead-4238-b43f-ffce5de75784,Perry PLC,677263.0,499.0,3.0,0.0,1.0,0.0
+8469448c-eaa9-4e55-9386-be7a7f79da38,Harrell-Richards,3038995.0,533.0,1.0,0.0,0.0,1.0
+0a0189d1-dc4f-428b-9307-aa136551abd7,Miles Group,2461388.0,807.0,4.0,0.0,0.0,0.0
+587e217d-b5a6-48d6-9a90-82cf947a103d,Reynolds and Sons,884184.0,539.0,2.0,0.0,1.0,0.0
+670648f5-226c-4d85-a6c5-cdbb1392d2d8,"Carter, Bailey and Zimmerman",202267.0,727.0,1.0,0.0,0.0,0.0
+ac58f014-7dab-45f4-96bc-3ded448003d7,"Davis, Cobb and Kennedy",3838389.0,750.0,4.0,0.0,0.0,0.0
+fa338843-843d-4c94-a2c8-74f1c9be117a,"Ellis, Douglas and Lawson",436177.0,373.0,9.0,0.0,0.0,1.0
+493bf4f3-40a3-4b0c-93a3-cdd9d1aef466,"Barron, Gonzalez and Murphy",3098463.0,498.0,2.0,0.0,1.0,0.0
+602c964e-2ef0-4cfd-8621-64159b7c5a66,Baker-Martinez,1267077.0,306.0,5.0,0.0,0.0,1.0
+b0adb404-f394-41b8-adf4-7917b8f195ea,Frey Group,4639878.0,491.0,1.0,0.0,0.0,0.0
+326748d4-7f36-4e00-98b3-29c8b4cb8d3c,Kim Ltd,2672064.0,615.0,10.0,0.0,0.0,0.0
+59b4205e-316a-4d85-9756-ed97ad03aa45,Jackson-Clements,2459475.0,617.0,9.0,0.0,0.0,1.0
+fda5304e-8bc1-421f-bca2-8c701950cd46,"Mclean, Esparza and Craig",3642431.0,555.0,9.0,0.0,0.0,1.0
+1cb6b1ad-c28d-4128-b1fa-a50264fb45ed,Adams-Snyder,2943352.0,705.0,3.0,1.0,0.0,0.0
+b886e16b-2818-49ef-b66d-4bc203fa52b8,"Wilson, Daniel and Wilkins",3222806.0,352.0,6.0,1.0,0.0,0.0
+ae1d2855-7637-42f6-8611-5d905ab2bd7b,Johnson-Benitez,568268.0,650.0,1.0,0.0,0.0,1.0
+f1ce368a-be5f-49ad-9571-0b73c5f5ca52,"Wilson, Johnson and Williams",994622.0,688.0,10.0,0.0,0.0,1.0
+66c40d8f-a91f-424f-ac9d-22fcb1368947,Yoder Ltd,3355434.0,462.0,8.0,1.0,0.0,0.0
+f0779631-cc86-416a-b220-e94b00e4984b,Stephens-Smith,2908300.0,517.0,2.0,0.0,0.0,1.0
+9b84561d-b817-488b-adf4-43a441492e50,"Brown, Lopez and Floyd",990621.0,511.0,0.0,1.0,0.0,0.0
+f347784f-ed6b-4501-99e4-8f534073fdee,Elliott-Andrews,4304824.0,728.0,2.0,0.0,0.0,0.0
+3dc01707-c02f-4135-b215-8211c4b3fcac,Hamilton-Ramsey,2433062.0,317.0,0.0,1.0,0.0,0.0
+3a897ee1-54f2-484b-a66b-e01c9ec5c921,Proctor-Nelson,4034040.0,741.0,7.0,0.0,0.0,1.0
+baaed7db-3e96-4469-bdf8-1e0d17ca86cc,Young-Wagner,3930122.0,627.0,1.0,0.0,0.0,1.0
+837b008e-f421-461e-b3cc-c3bf931b15cf,Dillon-Reid,2400270.0,826.0,8.0,1.0,0.0,0.0
+42cc61c5-b994-472c-964a-7d9eebc8b1ca,"Burton, Scott and Butler",3686113.0,352.0,9.0,1.0,0.0,0.0
+3124362e-df42-4ce4-a298-52ee2274ac18,Farmer Group,1976074.0,544.0,2.0,0.0,0.0,1.0
+9b155cbb-9c5a-4cea-b47f-77fd9ec09f09,"Matthews, Miller and Fuentes",2436375.0,352.0,8.0,0.0,0.0,1.0
+1b6de657-21a2-48ec-aeb5-f340ee4fc2c1,Hurley-Mcmillan,3803581.0,507.0,1.0,0.0,0.0,1.0
+fa40fff6-e3e3-4211-869d-46b9bdc8d4a2,Chavez and Sons,4553013.0,767.0,9.0,0.0,1.0,0.0
+18113e9f-9309-4a16-8e40-2de56f92271d,"Lewis, Jackson and Gray",3793923.0,334.0,9.0,0.0,0.0,1.0
+d1e52bbb-b80e-4d26-93a9-c17150a7a2e6,Cole Group,607774.0,787.0,8.0,0.0,0.0,0.0
+1bae831f-ddcb-4750-8e1c-a6d82da062d0,"Fernandez, Rios and Castaneda",3712315.0,486.0,0.0,0.0,0.0,1.0
+43e241b4-ad9c-4fa7-934b-f50e7d2fd1c4,"Sanders, Davis and Baker",3138777.0,349.0,1.0,0.0,0.0,0.0
+336dee05-49b8-4c73-a06c-9306e19bbee3,Nelson-Mendez,2862812.0,785.0,1.0,0.0,0.0,1.0
+b169e133-f122-492d-82b2-99093e3044d7,"Gallagher, Daniel and Wilson",3866296.0,749.0,8.0,0.0,0.0,0.0
+0954a5af-af13-4793-8e99-cb8a5b3458b0,Khan-Brown,175027.0,389.0,3.0,0.0,1.0,0.0
+428d75e4-b446-4768-b108-03ac475980f4,Carter LLC,2145140.0,683.0,8.0,0.0,0.0,0.0
+41e6b7b0-6f98-45a3-9332-d0c397fb2a98,Jordan-Mills,1453712.0,330.0,10.0,1.0,0.0,0.0
+fcf3b3ec-5fc4-4d15-a783-443773ee1e3f,Williams Group,4112071.0,719.0,7.0,0.0,0.0,0.0
+1cc3b476-77ba-4b72-8b87-e9d85087f3e9,Wright PLC,3943520.0,692.0,6.0,0.0,1.0,0.0
+37753e9f-fad7-4a00-9ffb-e49d8d29a94f,Nunez-Henderson,174898.0,463.0,3.0,1.0,0.0,0.0
+88446fbf-bd9e-4d89-80a5-f44775b7c33a,White LLC,1384439.0,475.0,9.0,0.0,1.0,0.0
+e2cdfe96-a290-4343-b1fc-818a12ae40a0,Allen-Bailey,173358.0,484.0,4.0,0.0,0.0,1.0
+5983e8aa-ebcc-48d5-8fb3-d4dde5ea3c72,Johnston Inc,350509.0,338.0,1.0,0.0,1.0,0.0
+7dc38ec3-8613-4aae-9dda-e029d14e95d3,Smith-Edwards,548154.0,717.0,10.0,0.0,1.0,0.0
+40a11598-e3c7-4100-82b3-84ed66076e1b,"Harmon, Griffin and Thompson",2574829.0,538.0,0.0,1.0,0.0,0.0
+d61de475-121d-4455-81b6-65ffe1a7fb21,"Elliott, Miller and Poole",1086932.0,614.0,10.0,0.0,0.0,0.0
+584ef302-7b67-4bcf-a50f-09411ac8384f,"White, Chen and Arroyo",921458.0,344.0,1.0,1.0,0.0,0.0
+1ab440ec-c7cc-4af3-964c-e6184191134a,Lane and Sons,3509169.0,582.0,1.0,1.0,0.0,0.0
+4833c999-1bf2-431c-b365-35e228e3d855,Hoffman-Hunter,3721196.0,666.0,10.0,1.0,0.0,0.0
+64136147-7e66-4b60-9344-0fc5b985ac3a,Vega-Sutton,3640936.0,629.0,3.0,0.0,0.0,1.0
+cd7eb616-c6c8-4f2c-bc30-8afa2c26c290,Williams Group,2456106.0,619.0,1.0,1.0,0.0,0.0
+3ba5f203-712e-4d30-ad2d-fcfc087a75bd,Mccarty-Gay,1430889.0,707.0,8.0,0.0,1.0,0.0
+9a3ef524-b0dc-4060-9c3c-1037f6d72a31,Hayes-Harrington,4527048.0,588.0,3.0,0.0,0.0,0.0
+07e0fe91-5243-4c8d-bc4e-53566c93e401,Moore-Byrd,1506492.0,716.0,0.0,1.0,0.0,0.0
+395ef788-852a-45d1-96c7-116957244f4d,Coleman and Sons,1185840.0,744.0,6.0,0.0,0.0,0.0
+f93187dc-0e42-4fca-89a5-f781c05885b3,"Mendoza, Hess and Freeman",3147499.0,651.0,2.0,0.0,0.0,0.0
+9180d56a-292a-4843-aba3-fc404f0a3352,Petersen-Gallagher,4887923.0,626.0,10.0,1.0,0.0,0.0
+929cb80e-c92b-4d23-b995-b7cc883b936d,"Gonzalez, Patterson and Weiss",3506092.0,623.0,7.0,0.0,0.0,0.0
+9d04257d-a686-49a2-8657-d6be826df5a8,"Maddox, Diaz and Edwards",1142144.0,505.0,2.0,0.0,0.0,0.0
+ac5c1aad-8777-4d4f-905c-a7e6601a7d26,"Lyons, Burgess and Rice",4790653.0,310.0,5.0,0.0,0.0,1.0
+eafb2bc6-eef7-4225-a783-f1b8270a1069,Carpenter-Fisher,4272482.0,850.0,9.0,1.0,0.0,0.0
+41c8aa14-3c7e-4089-9274-c6700dad821b,"Adams, Reyes and Day",3935199.0,762.0,6.0,0.0,0.0,0.0
+d2a652ff-291e-48be-8c3f-6dce3a883e3f,Hamilton-Sanders,1593642.0,750.0,3.0,0.0,0.0,0.0
+d9a642ad-afed-4faf-9b5d-a03cdfd07242,"Martin, Jackson and Allison",4300331.0,504.0,4.0,0.0,0.0,1.0
+5952d74e-ab99-4e39-9a76-af38a615a13e,"Howe, Collins and Warner",1018733.0,671.0,2.0,0.0,1.0,0.0
+0173eba5-fb87-4d0b-a2ad-83831c066f18,"Winters, Hogan and Gordon",1427214.0,693.0,6.0,0.0,1.0,0.0
+c5c899e7-fa89-4f2c-9b66-9c1d655e90ff,"Allen, Webster and Dixon",691526.0,750.0,2.0,1.0,0.0,0.0
+93659071-3b6a-4808-93e3-3afc36fe6912,Estrada Ltd,1148021.0,548.0,4.0,1.0,0.0,0.0
+9925ded5-da71-4d1e-8c3b-33dc7558d62b,Romero Group,3454168.0,437.0,9.0,1.0,0.0,0.0
+1203501c-2d35-4618-84b8-2fd80ccdac0e,Barajas-Herrera,2348027.0,617.0,1.0,0.0,0.0,1.0
+fb696a1e-950f-44e5-9b4b-183ad556517e,"Robinson, Burton and Riley",4004130.0,425.0,1.0,1.0,0.0,0.0
+a015a4f6-0f46-44dc-812a-aa0e78369d43,"Navarro, Hughes and Kirby",3992985.0,408.0,8.0,0.0,0.0,1.0
+14ac928f-4471-4e0a-9566-05bb9a478839,Patel PLC,1293384.0,574.0,10.0,0.0,0.0,0.0
+841966c0-132c-4167-abcb-60fb5641fc29,"Brown, Yates and Brown",2629120.0,479.0,9.0,0.0,0.0,0.0
+e2fe08da-178a-4f89-9f14-dec2a1f5b21e,"Brown, May and Martinez",1935591.0,638.0,5.0,1.0,0.0,0.0
+65dd897f-f305-4327-9cc0-b6f0759f06c9,Cohen-Erickson,823225.0,849.0,6.0,0.0,0.0,0.0
+9235931d-91c3-4319-91a0-2eee815eb96c,"Kennedy, Mcdaniel and King",2291657.0,587.0,4.0,0.0,0.0,1.0
+378ac1ef-b7ff-49f9-855c-aef47b817607,"Goodman, Burton and Kennedy",2455547.0,810.0,4.0,0.0,0.0,1.0
+92728d97-d7d7-48f7-9e77-7bfcd3080cc6,Cunningham-Zamora,2413363.0,485.0,6.0,0.0,0.0,0.0
+27d5a843-4acd-413c-ac6f-2951e24c394a,Flores Group,2971057.0,709.0,4.0,0.0,0.0,1.0
+53e8f81a-8590-44f4-acfd-9f6843d3cf76,"Williams, Harrison and Flores",1154814.0,376.0,3.0,0.0,0.0,1.0
+ca02b78f-3083-4bad-9d18-5f005dc4252d,Brown-Weaver,1602836.0,742.0,2.0,0.0,0.0,1.0
+266db473-563a-4901-9e66-246f5e73ff2a,Lewis-Salazar,4652094.0,618.0,1.0,0.0,0.0,0.0
+dd26bb10-002e-4541-bfc0-bb4818fd78b2,"Scott, Young and Fernandez",4150052.0,639.0,8.0,0.0,0.0,0.0
+30b407f1-2f12-4095-8235-979c6eee4782,Palmer-Paul,1310993.0,466.0,4.0,0.0,1.0,0.0
+94a473e1-2e2d-4401-8550-46bbea59f675,Garcia-Ramos,2295035.0,520.0,4.0,1.0,0.0,0.0
+88aa4ff6-26f7-4f91-8d8c-954b789ce2a7,"Flores, Rice and Daniels",4151395.0,303.0,9.0,0.0,0.0,0.0
+4a8e080b-07db-4e4f-b38f-f6916058c082,"Hunter, Adams and Crawford",3110919.0,662.0,5.0,1.0,0.0,0.0
+f744f82f-358c-49db-b5db-f33de24fc531,Taylor and Sons,347611.0,658.0,10.0,0.0,0.0,0.0
+a0495bd4-8ce3-4c27-a196-44ed09331a98,Harris-Jackson,3913564.0,440.0,6.0,0.0,1.0,0.0
+1b7ebbd1-4467-4c21-8d84-9385b7aadb91,"Nguyen, Hill and Carlson",1440790.0,843.0,6.0,0.0,0.0,1.0
+49134105-adfa-48f7-9624-f75485ca2011,Fox and Sons,3400582.0,580.0,6.0,1.0,0.0,0.0
+77a8f219-4717-4e8c-90e3-e049e62d2a1b,"Morgan, Simmons and Hunter",1234357.0,658.0,6.0,0.0,1.0,0.0
+10665332-b00b-423a-9630-9b08f2db298c,"White, Peterson and Morse",2208618.0,404.0,2.0,1.0,0.0,0.0
+5e4b9058-645f-49de-a982-84050d8ba0b9,Roth LLC,100536.0,667.0,1.0,1.0,0.0,0.0
+39b44765-616b-4333-874a-0594a6234e38,"Pitts, Black and Horn",3614909.0,361.0,3.0,0.0,0.0,0.0
+ad67f7b4-7e22-4a9d-9c18-7d6419abf8ba,Mejia Group,2484488.0,793.0,1.0,0.0,0.0,1.0
+1f613e1d-1835-4cb5-aa5e-48a187f35a46,Wilcox Ltd,201165.0,333.0,10.0,0.0,0.0,0.0
+6c655d0b-c48e-4e79-b391-b143f869c218,Walker-Adams,2924618.0,323.0,8.0,0.0,0.0,0.0
+90304298-3cbc-4081-8ddc-dd1a77a9baa7,Williams LLC,3427152.0,594.0,8.0,1.0,0.0,0.0
+fc328a6f-ce1e-42d9-b5ae-25234ad45b5e,Mercado-Crosby,3569440.0,708.0,3.0,0.0,0.0,0.0
+c0f3795b-e90d-44cc-92b0-5833a9282e77,Jones-Stewart,4192581.0,458.0,8.0,1.0,0.0,0.0
+e552ff80-08f2-4e69-a60f-1500d85a2573,Barr-Campbell,3978051.0,613.0,8.0,0.0,0.0,1.0
+3bb20486-2639-400c-a175-74f7eceeae2c,Lee-Duncan,1743585.0,564.0,6.0,0.0,0.0,0.0
+901cd45a-9418-42db-a79f-97bde2d30e98,Stevens Ltd,4033833.0,326.0,6.0,1.0,0.0,0.0
+d75187ef-d0f7-4f4d-8b5b-2aacf0678dcf,"Johnson, Hansen and Adams",3982422.0,736.0,3.0,0.0,0.0,0.0
+70496631-2c42-46f7-afaf-b01f9bc1b7c2,Walton and Sons,1657768.0,720.0,0.0,1.0,0.0,0.0
+1a22afba-9c2d-4208-bd68-7fdc0c688cb6,Bowers Group,4201798.0,448.0,0.0,0.0,0.0,1.0
+489014bf-2fca-45e2-938b-411a11c7b3d9,Hill-Torres,1880033.0,689.0,5.0,0.0,0.0,1.0
+024d1be6-0d3d-41dd-b685-0a903298e89c,Gay PLC,1391555.0,413.0,1.0,1.0,0.0,0.0
+2be0d382-b6ac-47ed-b06f-6f291a08ae0f,"Williams, Young and Graves",3462225.0,750.0,4.0,0.0,0.0,1.0
+fe6daea4-baf6-44c5-9f25-050eb613bfce,"Brown, Dorsey and Garcia",4219241.0,512.0,8.0,0.0,0.0,0.0
+7716cd57-62a3-45d2-8869-2b719500e6e5,Chang and Sons,3735319.0,673.0,2.0,0.0,0.0,1.0
+8a176bc1-9ce7-499a-9e89-d1e7adeee985,Long-Cole,4880212.0,752.0,8.0,0.0,0.0,1.0
+10ba0a9d-1ee4-4a79-b8bc-a365ef6819fc,Reyes and Sons,1409643.0,714.0,0.0,0.0,1.0,0.0
+647edca8-04eb-412d-b74d-f632f76c609a,"Mercado, Krueger and Washington",3539899.0,309.0,8.0,0.0,1.0,0.0
+17eaa564-fe50-45e0-bdbe-6208815ee7e3,Vance PLC,4603949.0,582.0,2.0,1.0,0.0,0.0
+39863be4-d6c5-4aaa-bc14-b3f11e586426,"Gilmore, Oneill and Walter",898473.0,331.0,9.0,1.0,0.0,0.0
+2e33e3d7-8cad-4598-ae1e-533fb9446185,"Boyer, Chen and Burch",670047.0,412.0,1.0,0.0,0.0,0.0
+85da452e-cf9a-4838-8678-ca0b72c67ad0,"Parker, Oconnor and Young",3131191.0,397.0,3.0,0.0,1.0,0.0
+990cc820-4e38-4500-988a-4373f54ab7db,Johnson-Myers,881139.0,358.0,2.0,0.0,0.0,0.0
+016dd1f3-331a-4f36-b81a-3262bcbb573e,"Singh, Smith and Alvarez",4676236.0,630.0,9.0,0.0,0.0,0.0
+e2d5f1fe-9f4b-4633-a0df-797b45d041cc,"Tran, Bond and Washington",705762.0,777.0,6.0,0.0,1.0,0.0
+6091e2f2-186a-41ed-b204-4c386ce3c97c,"Hill, Davis and Hamilton",3035309.0,581.0,6.0,0.0,1.0,0.0
+834b1b69-660b-486a-9bfd-ee12d91b4d98,"Carroll, Nelson and Compton",250287.0,808.0,8.0,0.0,1.0,0.0
+a82ee5ae-daf7-4ea6-83df-278c69d11a81,Martinez-Jones,157402.0,386.0,0.0,0.0,0.0,0.0
+298d1d16-47ee-4f65-9cdf-141a4c7eeea6,Holmes Group,835080.0,309.0,2.0,0.0,0.0,1.0
+1ac7679f-6a96-49cc-be6b-30a9b730b9ee,Bell Inc,461018.0,626.0,6.0,1.0,0.0,0.0
+4336417f-6fec-41c0-9585-264c096174dd,Hernandez Ltd,1390549.0,639.0,0.0,0.0,0.0,1.0
+3f6bde67-ad7c-416f-b55c-938e4deba4f6,Snyder LLC,302646.0,786.0,10.0,0.0,0.0,0.0
+86866526-6c8b-4e1e-bf86-38351e34cf1e,"Wong, Foley and Lopez",4795262.0,573.0,7.0,0.0,0.0,1.0
+46f5aab8-8108-4868-b122-1591020ff9f1,Shelton-Fuller,4116057.0,566.0,7.0,0.0,1.0,0.0
+de564b8c-539c-4c1c-99ab-ad3c5bc95dd1,"Smith, Flores and Carter",3580667.0,636.0,3.0,0.0,0.0,0.0
+2d0dfaa4-0f33-4f51-9d68-2ca941afe862,Garcia-Morales,3580225.0,802.0,4.0,0.0,1.0,0.0
+258b03b8-e7d9-4af7-b8e7-22447129de57,Burns Inc,2768228.0,833.0,8.0,1.0,0.0,0.0
+5f3e37ef-bfb5-49df-b669-c2262795f907,Garcia Group,1881822.0,539.0,5.0,0.0,1.0,0.0
+c85443a3-8187-4f7d-b507-e24d19260b5a,"Harvey, Haynes and Watts",1009552.0,538.0,6.0,0.0,0.0,0.0
+ca31da52-ea3e-486c-854e-40bdf5e94a26,"Haley, Pugh and Snyder",4634906.0,703.0,6.0,0.0,0.0,1.0
+a2eb0567-ad43-4fcc-9c0f-57c392ce66d2,Miller PLC,1626004.0,326.0,7.0,0.0,0.0,1.0
+4a1e33f4-e46b-4c84-8e00-7a456fc98e24,Schwartz-Newman,1331885.0,805.0,5.0,0.0,1.0,0.0
+78681eb0-3881-4c6f-bb6c-ea0ef7ba2090,"Jones, Daniels and Harrell",4864365.0,815.0,2.0,0.0,1.0,0.0
+6f37869c-55f5-4976-be54-6dc34445136d,"Kelly, Bell and Cardenas",828997.0,767.0,7.0,1.0,0.0,0.0
+69745793-5302-4516-a036-f010b72958c7,"Deleon, Arroyo and Bailey",3390021.0,337.0,1.0,0.0,1.0,0.0
+e0da06ce-51d8-423c-93d6-d600f3758979,Anderson and Sons,3023372.0,358.0,3.0,0.0,1.0,0.0
+328fbdd3-15db-43e2-b14c-e7d01d86adc7,Reeves-King,1436871.0,602.0,2.0,0.0,1.0,0.0
+742c0350-0c0e-4bc3-b2a9-4286f1f6f5e8,Williams LLC,3366397.0,326.0,3.0,0.0,0.0,0.0
+7243a77f-68a5-4646-8fc8-b74ca421f867,Gaines PLC,3870675.0,568.0,10.0,0.0,0.0,1.0
+100fe7fc-5291-45b3-a891-6d64e715f884,Gonzalez-Spence,3460702.0,763.0,8.0,1.0,0.0,0.0
+01b99701-7b01-40cc-8786-d10160addfe1,"Rivera, Bautista and Higgins",3649543.0,522.0,10.0,0.0,1.0,0.0
+1a4a8fc1-f3ab-4892-9c3c-1b9a22e7ca2b,"Villanueva, Rodriguez and Ryan",581155.0,581.0,5.0,0.0,0.0,0.0
+2448883d-8483-457d-a4d8-6d9217bb4bb5,Wheeler Inc,2699708.0,647.0,5.0,0.0,0.0,1.0
+6634543b-2b40-4d0d-ab58-e6e42eb21219,"Forbes, Johnson and Parker",2037931.0,747.0,1.0,0.0,1.0,0.0
+3e2f2b3c-2578-41fa-be42-171ffbbc4abe,Wang PLC,4439089.0,709.0,6.0,0.0,0.0,1.0
+4f2a0007-1f5f-49dd-8729-49eb37e37fa9,Pierce LLC,2105409.0,632.0,7.0,1.0,0.0,0.0
+3f9c6896-5a22-44d1-9237-8a3cb5d19662,"Morrison, Ali and Bailey",2465089.0,831.0,0.0,0.0,1.0,0.0
+b1de87f2-563c-44d6-ae9f-ab429d0b1621,Roberts Group,3422401.0,709.0,5.0,0.0,1.0,0.0
+7e312436-3a0e-49ff-b02f-1d699e890a26,Baldwin-Smith,503905.0,844.0,2.0,0.0,0.0,1.0
+b7544ff6-1952-454f-ba10-48c52b01b534,Sandoval-Thompson,773814.0,549.0,3.0,1.0,0.0,0.0
+20770fc3-04e5-4dc4-acd1-1ffdbb3d459c,"Davis, Humphrey and Fuller",4059401.0,772.0,2.0,0.0,1.0,0.0
+1b333258-9604-4e54-bae0-2222f18cd108,Smith Ltd,2536222.0,684.0,5.0,0.0,0.0,0.0
+623abaad-516a-4497-b5e6-cbbfe5c49673,Walker-Shaw,4279591.0,556.0,5.0,0.0,0.0,0.0
+a4efaaf1-7f14-4186-b945-f0571fe0017a,Cole Ltd,1564917.0,798.0,4.0,0.0,1.0,0.0
+9871ca0c-a97c-4e06-a1af-48fb0176e7a9,"Salinas, Edwards and Reyes",1653429.0,489.0,9.0,0.0,1.0,0.0
+f77bb6bc-ef6c-442f-b4b7-eb24ad9a6c6e,"Williams, Ryan and Brown",2059026.0,575.0,10.0,0.0,0.0,0.0
+d960f57b-0b90-48b0-8d0f-bfe6e48aaf56,Rodriguez-Price,4867552.0,833.0,10.0,1.0,0.0,0.0
+1d46c262-5189-4069-aa25-fcfff2d225ed,Washington and Sons,4915842.0,319.0,2.0,1.0,0.0,0.0
+378b1fc6-5ec4-4297-b92b-9026217032c1,Gardner Group,209795.0,620.0,1.0,0.0,1.0,0.0
+c1a84fca-c0b4-475e-b1b2-e62ff8356c81,Blackwell and Sons,2020169.0,406.0,6.0,0.0,0.0,0.0
+b5013b87-654b-4a01-91da-afbac01795ae,"Jackson, Wang and Dillon",4316671.0,482.0,5.0,0.0,0.0,0.0
+dce8b4da-27fb-494c-aa5e-c49042e94f92,"Orozco, Roberts and Lee",1243067.0,736.0,0.0,0.0,0.0,0.0
+db1306e7-3d56-4f2d-a7bb-3d9916fd8064,Johnson Inc,2550761.0,559.0,9.0,0.0,0.0,0.0
