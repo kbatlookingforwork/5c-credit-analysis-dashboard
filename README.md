@@ -56,12 +56,6 @@ This dataset contains synthetic data intended for credit analysis, which is part
    - Individual borrower deep-dive analysis
    - Portfolio performance monitoring
 
-4. **Reporting & Export**
-   - Automated report generation
-   - CSV export functionality
-   - Executive summary dashboards
-   - Compliance documentation
-
 ## Usage
 
 The application runs on Streamlit and provides an interactive interface for:
@@ -205,17 +199,7 @@ Diversification_Index = 1 - Σ((Segment_i / Total)²)
 - **Risk Distribution**: Concentration across risk segments
 - **Component Performance**: Individual 5C factor analysis
 
-#### Statistical Analysis
-```python
-# Score Distribution Analysis
-Mean_Score = Σ(Individual_Scores) / Total_Applications
-Standard_Deviation = √(Σ(Score - Mean)² / N)
-Skewness = E[(X - μ)³] / σ³
 
-# Risk Metrics
-Value_at_Risk = Percentile(Portfolio_Losses, 5%)
-Expected_Shortfall = E[Loss | Loss > VaR]
-```
 
 #### Visualization Components
 - **Score Distribution Histograms**: Portfolio risk profiling
@@ -224,33 +208,6 @@ Expected_Shortfall = E[Loss | Loss > VaR]
 - **Correlation Matrices**: Inter-component relationships
 - **Time Series Analysis**: Trend identification (future enhancement)
 
-## Installation & Setup
-
-1. **Clone the repository** or access via Replit
-2. **Install dependencies**: Streamlit, Plotly, Pandas, NumPy
-3. **Load sample datasets**: Synthetic consumer and SME data provided
-4. **Run the application**: `streamlit run app.py --server.port 5000`
-5. **Access dashboard**: Navigate to the provided URL
-
-## Advanced Features
-
-### Data Processing Pipeline
-- **Automated data cleaning** and standardization
-- **Feature engineering** for enhanced scoring accuracy
-- **Missing value imputation** using statistical methods
-- **Outlier detection** and treatment
-
-### Interactive Dashboard Capabilities
-- **Real-time parameter adjustment** with immediate score recalculation
-- **Drill-down analysis** from portfolio to individual borrower level
-- **Export functionality** for reports and detailed scorecards
-- **Multi-scenario comparison** for sensitivity analysis
-
-### Compliance & Audit Support
-- **Complete audit trail** of scoring decisions
-- **Regulatory alignment** with banking standards
-- **Documentation generation** for compliance reporting
-- **Risk model validation** metrics and backtesting
 
 ## Business Applications
 
