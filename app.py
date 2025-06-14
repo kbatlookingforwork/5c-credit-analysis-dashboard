@@ -190,7 +190,7 @@ def main():
     scenario_config = scenario_options[selected_scenario]
     
     if selected_scenario == "Custom Configuration":
-        st.sidebar.markdown("#### Custom 5C Weights (Make sure total sum of 5C is 1.0")
+        st.sidebar.markdown("#### Custom 5C Weights (Make sure total sum of 5C is 1.0)")
         character_weight = st.sidebar.slider("Character Weight", 0.0, 1.0, scenario_config['character'], 0.05)
         capacity_weight = st.sidebar.slider("Capacity Weight", 0.0, 1.0, scenario_config['capacity'], 0.05)
         capital_weight = st.sidebar.slider("Capital Weight", 0.0, 1.0, scenario_config['capital'], 0.05)
